@@ -48,12 +48,17 @@ Users can see the table by:
 mysql > SELECT * FROM GoogleCrawler;
 
 Each record will be like:
- 
+
 |    1 | TAYLOR SWIFT LYRICS - Love Story                                  | http://www.azlyrics.com/lyrics/taylorswift/lovestory.html               | We were both young when I first saw you.
 
  I close my eyes and the flashback starts:
 
  I'm standing there on a balcony in summer air.....(lyrics)
+
+ =============================================================
+ TODO:
+
+ Video and image extraciton
 
 
 

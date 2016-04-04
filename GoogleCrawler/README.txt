@@ -14,7 +14,7 @@ METHODS:
 
 4. Store the information extracted in MySQL database.
 
-Note: Since only 20 results are required to return, 
+Note: Scrapy and rq are very useful tools for speeding up the large scale html pages crawling process. However, with regard to only 20 results returned, it's not necessary to implemetn scrapy and rq here.
 
 ===============================================================
 SOFTWARE TOOLS:

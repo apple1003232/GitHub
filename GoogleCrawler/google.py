@@ -1,4 +1,3 @@
-
 import urllib
 import json
 from goose import Goose
@@ -12,6 +11,8 @@ def GoogleSearch(argu):
 	startNums = ["0","4","8","12","16"]
 
 	searchResults = []
+	print "Start to crawl Google with keyWords: %s" % keyWords
+
 
 	for num in startNums:
 		theUrl = url2 + num + q + keyWords
@@ -23,6 +24,7 @@ def GoogleSearch(argu):
 	g = Goose()
 	with open("result.dat", "w") as of:
 		for obj in searchResults:
+			print "Extracting No.%d result page..." % Id
 			# print obj["unescapedUrl"]
 			resultUrl = obj["unescapedUrl"]
 			# print resultUrl
@@ -32,6 +34,7 @@ def GoogleSearch(argu):
 			of.write(str(Id) + "|*|")
 			of.write(line.encode('utf-8') + "|**|")
 			Id += 1
+	print "-----End-----"
 	return
 
 line = ""
@@ -39,4 +42,3 @@ for ele in sys.argv[1:]:
 	line += " " + ele
 
 GoogleSearch(line)
-	

@@ -12,7 +12,7 @@ METHODS:
 
 3. Apply python-goose to extract the title, main text and meta description of each result page. Goose can also be useful in video and image extraction. In this project, I only extracted the main text from the html page.
 
-4. Store the information extracted in MySQL database.
+4. Store the information extracted in Mongodb database.
 
 Note: Since only 20 results are required to return, 
 
@@ -21,39 +21,22 @@ SOFTWARE TOOLS:
 
 (1) Python 2.7.10
 (2) python-goose (for installation details:  https://github.com/grangier/python-goose)
-(3) MySQL (downloaded from the official website)
+(3) Mongodb (for installation details: https://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/)
+(4) Robomongo (optional)
 
 ===============================================================
 SOURCE CODE FILES:
 
 (1) google.py
-Given the inputted search terms, crawl google, return the first 20 results and save the useful information of each result page to the "result.dat" file.
-
-(2)load.sql
-Create a table and load information from "results.dat" to the table in the database.
+Given the inputted search terms, crawl google, return the first 20 results and save the useful information of each result page to Mongodb.
 
 ===============================================================
 Here is an example usage of Google Crawler:
 
-(1) Enter key words "love story taylor", and crawl google :
-$ python google.py love story taylor
+(1) Enter key words "python", and crawl google :
+$ python google.py python
 
-The useful information for the first 20 results will be stored in the "result.dat" file. Users can access to it by opening the file in any editor such as sublime.
-
-(2) To store the information in the database, select a database in mysql, and then:
-
-mysql > source load.sql
-
-Users can see the table by:
-mysql > SELECT * FROM GoogleCrawler;
-
-Each record will be like:
-
-|    1 | TAYLOR SWIFT LYRICS - Love Story                                  | http://www.azlyrics.com/lyrics/taylorswift/lovestory.html               | We were both young when I first saw you.
-
- I close my eyes and the flashback starts:
-
- I'm standing there on a balcony in summer air.....(lyrics)
+The useful information for the first 20 results will be stored in the MongoDB. You can used Robomongo to view the data in the database if you like.
 
  =============================================================
  TODO:

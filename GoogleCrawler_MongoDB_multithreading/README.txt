@@ -1,6 +1,6 @@
 Google Crawler (Python 2.7)
 
-This is a basic tool to crawls google for user-inputted search terms with multithreading. It saves the first 20 results returned, visits each of the result pages and stores the title, main text and meta description in Mongodb database. 
+This is a basic tool to crawls google for user-inputted search terms with multithreading. It saves the first 20 results returned, visits each of the result pages and stores the title, main text, meta description and main image in Mongodb database. 
 
 Author: Hongchen
 ===============================================================
@@ -8,7 +8,7 @@ METHODS:
 
 1. This tool crawls google with the Google API. This free API allows me to return up to 4 results in a single call. To get the first 20 results, I called 4 times. 20 results are stored in a queue.
 
-2. Create 13 threads. For each thread, get one result from the queue, and apply python-goose to extract the title, main text and meta description of each result page. Goose can also be useful in video and image extraction. In this project, I only extracted the main text from the html page.
+2. Create 13 threads. For each thread, get one result from the queue, and apply python-goose to extract the title, main text, meta description and top image of each result page. Goose can also be useful in video and image extraction. In this project, I only extracted the main text and the top image sourcefrom the html page.
 
 3. Store the information extracted in Mongodb database.
 
@@ -39,7 +39,7 @@ The useful information for the first 20 results will be stored in the MongoDB. Y
  =============================================================
  TODO:
 
- Video and image extraciton
+ Video extraciton
 
 
 

@@ -38,6 +38,10 @@ def process_data(threadName, q):
 			item['url'] = resultUrl
 			item['keyWords'] = keyWords
 			item['description'] = article.cleaned_text[:4000]
+			if article.top_image:
+				item['image'] = article.top_image.src
+			else:
+				item['image'] = ""
 			insert(item)
 			Id += 1
 			
